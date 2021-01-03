@@ -1,0 +1,27 @@
+<div>
+    <button mat-flat-button color="primary" (click)="saveMyList()">Zapisz moja liste</button>
+    <button mat-flat-button color="primary" *ngIf="!seeList" (click)="seeMyList()">Wyswietl moja liste</button>
+    <button mat-flat-button color="primary" *ngIf="seeList" (click)="seeMyList()">Wyswietl wszystkie pokemony</button>
+    <button mat-flat-button color="primary" (click)="seeListInRange()">Wyswietl pokemony z podanego zakresu</button>
+    <button mat-flat-button color="primary" (click)="deleteAll()">Usun cała liste</button>
+    <button mat-flat-button color="primary" (click)="sendMyList()">Wyslij moja liste</button>
+    <button mat-flat-button color="primary" (click)="retriveMyList()">Przywroc liste</button>
+
+    <h3>Hej {{email}} Tu twoja lista pokemon!</h3>
+    <h5> Aktualne Pokemony w Twojej liscie</h5>
+    <mat-list role="list">
+        <mat-list-item class="list" *ngFor="let pokemon of favoritePokemon" [ngStyle]="deleteTable[pokemon.idPokemon]?{'background-color': 'red'} : {'background-color': 'white'}" role="listitem">
+            <ng-container>
+                <p class="pokeName">{{pokemon?.name | pokemonName}}</p> <button mat-button color="primary" class="btnDelete" (click)="deleteFavorite(pokemon)"><mat-icon>delete</mat-icon></button>
+            </ng-container>
+        </mat-list-item>
+    </mat-list>
+    <h5> To Pokemony ktore chcessz doddac do Twojej listy</h5>
+    <mat-list role="list">
+        <mat-list-item class="list" *ngFor="let pokemon of newPokemon" role="listitem">
+            <ng-container>
+                <p class="pokeName">{{pokemon?.name | pokemonName}}</p> <button mat-button color="primary" class="btnDelete" (click)="newPokemonList(pokemon)"><mat-icon>delete</mat-icon></button>
+            </ng-container>
+        </mat-list-item>
+    </mat-list>
+</div>

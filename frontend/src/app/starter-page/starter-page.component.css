@@ -1,0 +1,74 @@
+.sideNavRight {
+    width: auto;
+    text-align: center;
+}
+
+.sidenav {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+.my-card {
+    max-width: 400px;
+}
+
+.sideNavButton {
+    position: -webkit-sticky;
+    position: fixed;
+    bottom: 15px;
+    right: 20px;
+    z-index: 999;
+}
+
+.mat-spinner {
+    margin: 0 auto;
+}
+
+.container {
+    margin-top: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.card-container {
+    width: 400px;
+    max-width: 100%;
+    margin: 0 25px 25px 0;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.content {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+
+.spinner-item {
+    display: grid;
+    place-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.mat-form-field {
+    text-align: center;
+    width: 80%;
+}
+
+.btnSearch {
+    width: 1%;
+}
+
+.search-box {
+    text-align: center;
+}
+
+.btn-all {
+    display: flex;
+    justify-content: center;
+}

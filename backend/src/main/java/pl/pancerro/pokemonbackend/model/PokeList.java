@@ -1,7 +1,6 @@
 package pl.pancerro.pokemonbackend.model;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 public class PokeList {

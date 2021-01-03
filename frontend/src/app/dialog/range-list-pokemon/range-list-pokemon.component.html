@@ -1,0 +1,23 @@
+<div>
+    <h1 mat-dialog-title>Zapisz swoja liste </h1>
+    <div>
+        <form #rangeForm="ngForm">
+            <div ngModelGroup="range">
+                <mat-form-field>
+                    <input matInput type="number" required name="start" min="1" max="890" ngModel>
+                    <mat-placeholder>Początek zakresu</mat-placeholder>
+                    <mat-error>Początek zakresu musi być </mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput type="number" required name="end" min="1" max="890" ngModel>
+                    <mat-placeholder>Koniec zakresu</mat-placeholder>
+                    <mat-error>Koniec zakresu musi być </mat-error>
+                </mat-form-field>
+            </div>
+        </form>
+    </div>
+    <div class="btn" mat-dialog-actions>
+        <button mat-flat-button color="primary" [mat-dialog-close]="undefined">Anuluj!</button>
+        <button mat-flat-button color="primary" [mat-dialog-close]="rangeForm" [disabled]="rangeForm.invalid" cdkFocusInitial>Wyswietl</button>
+    </div>
+</div>

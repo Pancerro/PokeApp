@@ -1,0 +1,19 @@
+<div>
+    <h1 mat-dialog-title>Moja lista </h1>
+    <div>
+        <form #emailForm="ngForm">
+            <div ngModelGroup="email">
+                <mat-form-field>
+                    <input matInput type="email" required name="email" [email]="true" ngModel>
+                    <mat-placeholder>Email</mat-placeholder>
+                    <mat-error>Email musi być </mat-error>
+
+                </mat-form-field>
+            </div>
+        </form>
+    </div>
+    <div class="btn" mat-dialog-actions>
+        <button mat-flat-button color="primary" [mat-dialog-close]="undefined">Anuluj!</button>
+        <button mat-flat-button color="primary" [mat-dialog-close]="emailForm" [disabled]="emailForm.invalid" cdkFocusInitial>OK</button>
+    </div>
+</div>

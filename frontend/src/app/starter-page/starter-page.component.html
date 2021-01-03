@@ -1,0 +1,51 @@
+<div>
+    <mat-sidenav-container class="sidenav">
+        <mat-sidenav #sidenavright class="sideNavRight" position="end">
+            <app-side-nav [favoritePokemon]="favoriteList" [email]="email" (seeRange)="seeRange()" (save)="saveMyList()" (retrive)="retriveMyList()" (see)="seeMyList($event)" (send)="sendMyList()"></app-side-nav>
+        </mat-sidenav>
+        <mat-sidenav-content>
+
+            <button [disabled]="!seePokeCard" mat-fab color="primary" class="sideNavButton" (click)="sidenavright.toggle()"><mat-icon>add</mat-icon></button>
+            <cdk-virtual-scroll-viewport #scroller itemSize="1" class="content">
+                <div class="search-box">
+                    <mat-form-field>
+                        <p> <input matInput type="text" [(ngModel)]="searchPokemon"></p>
+                        <mat-placeholder>Szukaj Pokemona po nazwie lub numerze</mat-placeholder>
+                        <button [disabled]="!searchPokemon" mat-icon-button matSuffix class="btnSearch" (click)="searchPoke(searchPokemon)">
+                            Szukaj
+                            </button>
+                    </mat-form-field>
+                    <p *ngIf="btnAll"> <button mat-flat-button color="primary" (click)="seeAllPokemon()">Pokaz wszystkie pokemony!</button></p>
+
+                </div>
+                <div class="container" *ngIf="seePokeCard else loading">
+                    <ng-container *cdkVirtualFor="let pokemon of pokeRangeList; let i = index">
+                        <app-pokemon-card id="poke-card-{{i}}" class="card-container" [favorite]="checkFavoriteIdList(pokemon?.idPokemon)" (favoriteList)="toFavorite($event)" [pokemon]="pokemon"></app-pokemon-card>
+                    </ng-container>
+
+                </div>
+                <div *ngIf="loadingSpinner" class="spinner-item">
+                    <mat-progress-spinner [mode]="'indeterminate'" [diameter]="50"></mat-progress-spinner>
+                </div>
+            </cdk-virtual-scroll-viewport>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>
+
+<ng-template #loading>
+    <div class="container">
+        <ng-container *ngFor="let key of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]">
+            <mat-card class="my-card card-container">
+                <mat-card-header>
+                    <mat-card-title></mat-card-title>
+                    <mat-card-subtitle></mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <mat-spinner></mat-spinner>
+                </mat-card-content>
+                <mat-card-actions>
+                </mat-card-actions>
+            </mat-card>
+        </ng-container>
+    </div>
+</ng-template>

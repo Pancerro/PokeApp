@@ -1,0 +1,29 @@
+.my-card {
+    max-width: 400px;
+    text-align: center;
+    height: auto;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}
+
+.empty-favorite {
+    margin-top: 5px;
+    border: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: white;
+}
+
+.favorite {
+    margin-top: 5px;
+    border: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: red;
+    background-color: white;
+}

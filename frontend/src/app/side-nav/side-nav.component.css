@@ -1,0 +1,13 @@
+:host .mat-flat-button {
+    border-radius: 0px !important;
+    width: 100%;
+    text-align: center;
+}
+
+.pokeName {
+    width: 90%;
+}
+
+.btnDelete {
+    width: 10%;
+}

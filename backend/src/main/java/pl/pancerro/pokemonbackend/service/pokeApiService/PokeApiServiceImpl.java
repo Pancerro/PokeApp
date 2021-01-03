@@ -28,7 +28,6 @@ public class PokeApiServiceImpl implements PokeApiService{
     public Pokemon searchPokemon(String pokemonName) {
         String url="https://pokeapi.co/api/v2/pokemon/"+pokemonName;
         RestTemplate restTemplate = new RestTemplate();
-        System.out.println(restTemplate.getForObject(url, JsonNode.class).hasNonNull("forms"));
         JsonNode id = restTemplate.getForObject(url, JsonNode.class).get("forms").get(0).get("url");
         String stringID = id.toString().split("/")[6];
         return getPokemon(Integer.parseInt(stringID));

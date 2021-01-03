@@ -12,6 +12,7 @@ import pl.pancerro.pokemonbackend.service.userService.UserService;
 import javax.mail.MessagingException;
 import java.util.List;
 
+@CrossOrigin(origins = "*")
 @RestController
 public class PokeController {
 
@@ -42,7 +43,6 @@ public class PokeController {
 
     @PostMapping("/save-list/{email}")
     public ResponseEntity<?>saveList(@PathVariable String email,@RequestBody List<Integer> list) {
-        System.out.println(list);
         userService.saveList(email, list);
         return new ResponseEntity<>( HttpStatus.OK);
     }

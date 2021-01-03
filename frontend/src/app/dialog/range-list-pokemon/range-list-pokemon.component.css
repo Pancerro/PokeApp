@@ -1,0 +1,10 @@
+.mat-form-field {
+    width: 100% !important;
+    text-align: center;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

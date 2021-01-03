@@ -1,5 +1,7 @@
 package pl.pancerro.pokemonbackend.model;
 
+import java.sql.Blob;
+
 public class Pokemon {
     int idPokemon;
     String name;
