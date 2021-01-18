@@ -7,7 +7,7 @@ import { Pokemon } from '../model/pokemon';
   providedIn: 'root'
 })
 export class PokeService {
-  private basicUrl = "http://localhost:8080/";
+  private basicUrl = "http://poke-backend-svc:8080/";
   public favoriteIdList: number[] = [];
   public addNewFavoriteIdList: number[] = [];
   constructor(private http: HttpClient) { }
