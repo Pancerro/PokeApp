@@ -11,7 +11,7 @@
                     <mat-form-field>
                         <p> <input matInput type="text" [(ngModel)]="searchPokemon"></p>
                         <mat-placeholder>Szukaj Pokemona po nazwie lub numerze</mat-placeholder>
-                        <button [disabled]="!searchPokemon" mat-icon-button matSuffix class="btnSearch" (click)="searchPoke(searchPokemon)">
+                        <button [disabled]="!searchPokemon" mat-icon-button matSuffix class="btnSearch" (click)="searchPoke()">
                             Szukaj
                             </button>
                     </mat-form-field>
