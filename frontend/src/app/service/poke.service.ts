@@ -2,12 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Pokemon } from '../model/pokemon';
-
+import { environment } from './../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class PokeService {
   private basicUrl = "http://poke-backend-route-labproj21.apps.cp4apps.cloudpak.site/";
+  private basicUrl1 = environment.url;
   public favoriteIdList: number[] = [];
   public addNewFavoriteIdList: number[] = [];
   constructor(private http: HttpClient) { }

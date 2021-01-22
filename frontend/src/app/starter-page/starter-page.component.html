@@ -12,11 +12,11 @@
                         <p> <input matInput type="text" [(ngModel)]="searchPokemon"></p>
                         <mat-placeholder>Szukaj Pokemona po nazwie lub numerze</mat-placeholder>
                         <button [disabled]="!searchPokemon" mat-icon-button matSuffix class="btnSearch" (click)="searchPoke()">
-                            Szukaj
+                          <mat-icon>search</mat-icon>
                             </button>
                     </mat-form-field>
                     <p *ngIf="btnAll"> <button mat-flat-button color="primary" (click)="seeAllPokemon()">Pokaz wszystkie pokemony!</button></p>
-
+                  <p>{{x}}</p>
                 </div>
                 <div class="container" *ngIf="seePokeCard else loading">
                     <ng-container *cdkVirtualFor="let pokemon of pokeRangeList; let i = index">

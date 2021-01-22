@@ -8,6 +8,8 @@ import { MatDialog } from '@angular/material';
 import { EmailFormComponent } from '../dialog/email-form/email-form.component';
 import { SideNavComponent } from '../side-nav/side-nav.component';
 import { RangeListPokemonComponent } from '../dialog/range-list-pokemon/range-list-pokemon.component';
+import { environment } from './../../environments/environment';
+
 
 @Component({
   selector: 'app-starter-page',
@@ -18,7 +20,7 @@ export class StarterPageComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('scroller', { static: false }) scroller: CdkVirtualScrollViewport;
   @ViewChild('sidenavright', { static: true }) private sidenavright;
   @ViewChild(SideNavComponent, { static: true }) private sidenav: SideNavComponent;
-
+  x = environment.url;
   private subscription: Subscription[] = [];
   private startRange = 1;
   private endRange = 12;
