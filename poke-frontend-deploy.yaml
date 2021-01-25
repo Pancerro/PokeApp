@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: poke-frontend-deploy
+  name: poke-frontend-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: poke-frontend-deploy
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: poke-frontend-deploy
+    spec:
+      containers:
+      - image: image-registry.openshift-image-registry.svc:5000/labproj21/poke-frontend:1.3
+        name: poke-frontend-app
+        ports:
+        - containerPort: 80
+        resources: {}
+        envFrom:
+        - configMapRef:
+            name: poke-frontend-configmap
+status: {}
