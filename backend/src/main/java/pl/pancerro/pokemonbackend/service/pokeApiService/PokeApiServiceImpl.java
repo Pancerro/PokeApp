@@ -1,6 +1,7 @@
 package pl.pancerro.pokemonbackend.service.pokeApiService;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import pl.pancerro.pokemonbackend.model.PokeList;
@@ -11,10 +12,14 @@ import java.util.List;
 
 @Service
 public class PokeApiServiceImpl implements PokeApiService{
+    @Value("pokePicture")
+    String url;
+    @Value("pokeApi")
+    String urlPng;
     @Override
     public Pokemon getPokemon(int id){
-        String url="https://pokeapi.co/api/v2/pokemon/"+id;
-        String urlPng="https://pokeres.bastionbot.org/images/pokemon/"+id+".png";
+        url=url+id;
+        urlPng=urlPng+id+".png";
         RestTemplate restTemplate = new RestTemplate();
         JsonNode name = restTemplate.getForObject(url, JsonNode.class).get("forms").get(0).get("name");
         JsonNode height = restTemplate.getForObject(url, JsonNode.class).get("height");
